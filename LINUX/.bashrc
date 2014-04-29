@@ -132,3 +132,27 @@ export PATH="$HOME/workspace/sdk_sports/sonar-runner-2.3/bin:$PATH"
 #Alias
 alias st="git status"
 alias rvt="git checkout --"
+
+#Prompt customization
+# Shows the current git branch if any, and if there's something to commit
+
+  BLACK="\[\033[0;30m\]"
+  BLACKBOLD="\[\033[1;30m\]"
+  RED="\[\033[0;31m\]"
+  REDBOLD="\[\033[1;31m\]"
+  GREEN="\[\033[0;32m\]"
+  GREENBOLD="\[\033[1;32m\]"
+  YELLOW="\[\033[0;33m\]"
+  YELLOWBOLD="\[\033[1;33m\]"
+  BLUE="\[\033[0;34m\]"
+  BLUEBOLD="\[\033[1;34m\]"
+  PURPLE="\[\033[0;35m\]"
+  PURPLEBOLD="\[\033[1;35m\]"
+  CYAN="\[\033[0;36m\]"
+  CYANBOLD="\[\033[1;36m\]"
+  WHITE="\[\033[0;37m\]"
+  WHITEBOLD="\[\033[1;37m\]"
+
+alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
+
+export PS1="${RED}[${REDBOLD}\w ${YELLOWBOLD}\$(__git_ps1) ${RED}] ${WHITE}> ${GREENBOLD}"
